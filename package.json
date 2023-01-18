@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf output & rimraf dist",
-    "export-figma": "figma-export use-config figma.config.js"
+    "export-figma": "figma-export use-config figma.config.js",
+    "commit": "git-cz"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,19 @@
     "@figma-export/output-components-as-svg": "^4.5.0",
     "dotenv": "^16.0.3",
     "rimraf": "^4.1.1"
+  },
+  "dependencies": {
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
