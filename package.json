@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf output & rimraf dist",
     "export-figma": "figma-export use-config figma.config.js",
+    "svgr": "svgr --icon --native --replace-attr-values '#000={props.color},#fff={props.fill}' -d src output/Icons --out-dir output/rendered --index-template svgr-template.js",
     "commit": "git-cz"
   },
   "keywords": [],
@@ -15,12 +16,14 @@
   "devDependencies": {
     "@figma-export/cli": "^4.5.0",
     "@figma-export/output-components-as-svg": "^4.5.0",
+    "@svgr/cli": "^6.5.1",
     "dotenv": "^16.0.3",
     "rimraf": "^4.1.1"
   },
   "dependencies": {
     "commitizen": "^4.2.6",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "react": "^18.2.0"
   },
   "config": {
     "commitizen": {

@@ -16,7 +16,7 @@ module.exports = {
       "components",
       {
         fileId,
-        onlyFromPages: ["Page 1"],
+        onlyFromPages: ["Icons"],
         outputters,
       },
     ],
