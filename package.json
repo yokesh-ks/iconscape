@@ -1,18 +1,25 @@
 {
   "name": "iconscape",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.3",
+  "description": "IconScape is an npm library that provides a wide range of high-quality icons for use in web and mobile development",
   "main": "output/index.js",
   "module": "output/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "rimraf output & rimraf dist",
+    "clean": "rimraf output & rimraf dist",
     "export-figma": "figma-export use-config figma.config.js",
     "svgr": "svgr --icon --native --replace-attr-values '#000={props.color},#fff={props.fill}' -d src dist/Icons --out-dir dist/rendered --index-template svgr-template.js",
     "commit": "git-cz",
-    "build-lib": "rollup -c"
+    "rollup": "rollup -c",
+    "build": "yarn clean && yarn export-figma && yarn svgr && yarn rollup"
   },
-  "keywords": [],
+  "keywords": [
+    "Icon library",
+    "SVG",
+    "figma-export",
+    "High-quality icons",
+    "Symbol"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
