@@ -5,7 +5,7 @@ const fileId = process.env.FILE_ID;
 const figmaToken = process.env.FIGMA_TOKEN;
 
 const outputters = [
-  require("@figma-export/output-components-as-svg")({ output: "./output" }),
+  require("@figma-export/output-components-as-svg")({ output: "./dist" }),
 ];
 
 /** @type {import('@figma-export/types').FigmaExportRC} */

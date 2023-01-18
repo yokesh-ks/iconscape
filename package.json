@@ -2,28 +2,39 @@
   "name": "iconscape",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "output/index.js",
+  "module": "output/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf output & rimraf dist",
     "export-figma": "figma-export use-config figma.config.js",
-    "svgr": "svgr --icon --native --replace-attr-values '#000={props.color},#fff={props.fill}' -d src output/Icons --out-dir output/rendered --index-template svgr-template.js",
-    "commit": "git-cz"
+    "svgr": "svgr --icon --native --replace-attr-values '#000={props.color},#fff={props.fill}' -d src dist/Icons --out-dir dist/rendered --index-template svgr-template.js",
+    "commit": "git-cz",
+    "build-lib": "rollup -c"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
     "@figma-export/cli": "^4.5.0",
     "@figma-export/output-components-as-svg": "^4.5.0",
+    "@rollup/plugin-babel": "^6.0.3",
     "@svgr/cli": "^6.5.1",
     "dotenv": "^16.0.3",
-    "rimraf": "^4.1.1"
+    "rimraf": "^4.1.1",
+    "rollup": "2.78.1",
+    "rollup-plugin-filesize": "^9.1.2"
   },
   "dependencies": {
     "commitizen": "^4.2.6",
-    "cz-conventional-changelog": "^3.3.0",
-    "react": "^18.2.0"
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native-svg": "*"
   },
   "config": {
     "commitizen": {
