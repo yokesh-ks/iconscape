@@ -1,0 +1,20 @@
+{
+  "name": "icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rimraf output & rimraf dist",
+    "export-figma": "figma-export use-config figma.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@figma-export/cli": "^4.5.0",
+    "@figma-export/output-components-as-svg": "^4.5.0",
+    "dotenv": "^16.0.3",
+    "rimraf": "^4.1.1"
+  }
+}
